@@ -1,0 +1,7 @@
+{
+  "name": "HoldSpaceToJump",
+  "version_number": "1.0.0",
+  "website_url": "https://github.com/Pousset/HoldSpaceToJump_Ror2",
+  "description": "HoldSpaceMod adds an improved hold space to auto-jump mechanic to Risk of Rain 2.Instead of instantly triggering auto-jump, the mod distinguishes between a short tap and a long press of the Space key",
+  "dependencies": ["bbepis-BepInExPack-5.4.2107"]
+}
