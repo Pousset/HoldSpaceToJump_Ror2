@@ -16,7 +16,7 @@ namespace HoldSpaceMod
         public bool jump = false;
         private bool spaceWasPressed = false;
         private float spaceHoldTime = 0f;
-        private const float HOLD_THRESHOLD = 0.15f; // Temps pour différencier appui/maintien
+        private const float HOLD_THRESHOLD = 0.15f; // Temps pour diffÃ©rencier appui/maintien
 
         public void Awake()
         {
@@ -28,7 +28,7 @@ namespace HoldSpaceMod
             Log.Info(nameof(Awake) + " done.");
         }
 
-        // Méthode Auto Jump améliorée avec détection appui court/maintien
+        // MÃ©thode Auto Jump amÃ©liorÃ©e avec dÃ©tection appui court/maintien
         private void AutoJump(On.RoR2.PlayerCharacterMasterController.orig_Update orig, PlayerCharacterMasterController self)
         {
             orig.Invoke(self);
@@ -39,7 +39,7 @@ namespace HoldSpaceMod
                 return;
             }
 
-            // Détection pour vérifier si la touche espace est maintenue
+            // DÃ©tection pour vÃ©rifier si la touche espace est maintenue
             if (Input.GetKey(KeyCode.Space))
             {
                 if (!spaceWasPressed)
@@ -54,7 +54,7 @@ namespace HoldSpaceMod
             }
             else
             {
-                // Réinitialise quand on relâche
+                // RÃ©initialise quand on relÃ¢che
                 spaceWasPressed = false;
                 spaceHoldTime = 0f;
             }
@@ -62,7 +62,7 @@ namespace HoldSpaceMod
             // Active l'auto-jump SEULEMENT si on maintient assez longtemps
             bool enableAutoJump = spaceHoldTime >= HOLD_THRESHOLD;
 
-            // Logique Auto Jump (activée seulement si maintien prolongé)
+            // Logique Auto Jump (activÃ©e seulement si maintien prolongÃ©)
             if (enableAutoJump)
             {
                 if (jump && self.bodyInputs != null && 
@@ -80,7 +80,7 @@ namespace HoldSpaceMod
             }
             else
             {
-                // Si appui court, réinitialise pour permettre le comportement normal
+                // Si appui court, rÃ©initialise pour permettre le comportement normal
                 jump = false;
             }
 #pragma warning restore Publicizer001
